@@ -1,0 +1,17 @@
+<h1>やること新規作成</h1>
+
+<%= link_to '一覧へ', tasks_path %>
+
+<%= form_with model: @task do |f| %>
+<div class="field">
+  <%= f.label :やること %><br>
+  <%= f.textarea_field :title %>
+</div>
+<div class="field">
+  <%= f.label :詳細 %><br>
+  <%= f.text_field :body %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>
