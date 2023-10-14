@@ -29,6 +29,23 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find(params[:id]) #find(params[:id])は投稿され情報に付けられたidを探し出すコード
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      redirect_to tasks_path #updateできたらindexページに行く
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id]) #find(params[:id])で削除する情報を見つけて、destroyで削除
+    @task.destroy
+    redirect_to task_path
+  end
+
 private
  def task_params
   #モデル作成時に作ったやつ
