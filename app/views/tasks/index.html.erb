@@ -3,7 +3,7 @@
 <%= link_to '新規作成', new_task_path %>
 
 <table class="table table-striped">
-</table>
+
  <thead>
   <tr>
     <th>やること</th>
@@ -16,7 +16,7 @@
   <tr>
     <td><%= task.title %></td>
     <td><%= task.body %></td>
-    <td><%= link_to'新規作成' , new_task_path, class: "btn btn-primary %>" 
+    <td><%= link_to'新規作成' , new_task_path, class: "btn btn-primary" %></td>
     <td><%= link_to '編集', edit_task_path(task), class: "btn btn-success" %></td>
     <%= # edit画面へ遷移する時にはidが必要なので今この情報を持っているtaskを最後につける %>
     <td><%= link_to '削除', task, method: :delete, data: { confirm: 'You sure?' }, class: "btn btn-danger" %></td>
