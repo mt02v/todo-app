@@ -4,6 +4,7 @@
 
 <table class="table table-striped">
 
+
  <thead>
   <tr>
     <th>やること</th>
@@ -12,16 +13,16 @@
 </thead>
 
  <tbody>
-  <% @task.each do |task| %>
+   <% @tasks.each do |task| %>
   <tr>
     <td><%= task.title %></td>
     <td><%= task.body %></td>
-    <td><%= link_to'新規作成' , new_task_path, class: "btn btn-primary" %></td>
+    <td><%= link_to'新規作成', new_task_path, class: "btn btn-primary" %></td>
     <td><%= link_to '編集', edit_task_path(task), class: "btn btn-success" %></td>
-    <%= # edit画面へ遷移する時にはidが必要なので今この情報を持っているtaskを最後につける %>
+    <%# edit画面へ遷移する時にはidが必要なので今この情報を持っているtaskを最後につける %>
     <td><%= link_to '削除', task, method: :delete, data: { confirm: 'You sure?' }, class: "btn btn-danger" %></td>
- <% #path名ではなく、method: :deleteと記述することでdestroyアクションを呼びます。そして、data:　{ confirm: 'You sure?' }と記述することで %>
- <% #確認のモーダルウィンドウを出すことができる %>
+ <%# path名ではなく、method: :deleteと記述することでdestroyアクションを呼びます。そして、data:　{ confirm: 'You sure?' }と記述することで %>
+ <%# 確認のモーダルウィンドウを出すことができる %>
   </tr>
   <% end %>
  </tbody>

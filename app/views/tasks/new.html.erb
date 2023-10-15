@@ -5,13 +5,13 @@
 <%= form_with model: @task do |f| %>
 <div class="field">
   <%= f.label :やること %><br>
-  <%= f.textarea_field :title %>
+  <%= f.text_field :title %>
 </div>
 <div class="field">
   <%= f.label :詳細 %><br>
   <%= f.text_field :body %>
 </div>
 <div class="actions">
-  <%= f.submit %>
+  <%= f.submit '投稿 %>
 </div>
 <% end %>
