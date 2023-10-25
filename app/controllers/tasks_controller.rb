@@ -16,9 +16,6 @@ class TasksController < ApplicationController
     end
   end
 
-  def edit
-    @task = Task.find(params[:id])
-  end
 
   def update
     @task = Task.find(params[:id])
@@ -37,14 +34,17 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     if @task.update(task_params)
       redirect_to tasks_path #updateできたらindexページに行く
+    else
+      render 'edit'
     end
   end
 
-  def destroy
+  def show
     @task = Task.find(params[:id]) #find(params[:id])で削除する情報を見つけて、destroyで削除
     @task.destroy
-    redirect_to task_path
+    redirect_to tasks_path
   end
+
 
 private
  def task_params

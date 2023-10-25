@@ -2,7 +2,7 @@
 
 <%= link_to '一覧へ', tasks_path, class: "btn btn-info" %>
 
-<%= form_wirh model: @task do |f| %>
+<%= form_with model: @task do |f| %>
 <div class="field">
   <%= f.label :やること %><br>
   <%= f.text_field :title %>
@@ -14,4 +14,4 @@
 <div class="actions">
   <%=f.submit %>
 </div>
-<% end
+<% end %>
